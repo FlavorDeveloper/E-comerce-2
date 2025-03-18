@@ -14,6 +14,11 @@ export function addBtn () {
             boton.textContent = 'Listo ✔︎';
             const padre = e.target.parentElement.parentElement;
             padre.style.backgroundColor = `${addBtnColor}`;
+            padre.classList.add('fa-bounce');
+
+            setTimeout(() => {
+                padre.classList.remove('fa-bounce');
+            }, 1000);
 
             setTimeout(() => {
                 boton.style.backgroundColor = ""; 

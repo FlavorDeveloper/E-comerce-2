@@ -169,10 +169,10 @@ export function carrito() {
     function actualizarColorYMovimiento() {
         if (productosCarrito.length > 0) {
             carBtn.style.color = greenColor;
-            carBtn.classList.add('shake');
+            carBtn.classList.add('fa-shake');
         } else {
             carBtn.style.color = '';
-            carBtn.classList.remove('shake');
+            carBtn.classList.remove('fa-shake');
         }
     }
 
