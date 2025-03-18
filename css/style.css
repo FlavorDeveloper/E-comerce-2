@@ -61,33 +61,6 @@ p  { font-size: 1.6rem; }
 a  { text-decoration: none; font-size: 1.6rem; }
 ul { list-style: none; }
 
-/* Notification */
-
-.notification-container{
-    position: absolute;
-    bottom: -1;
-    right: 0;
-    background-color: var(--background-red);
-    width: max-content;
-    border-radius: 1rem 0 0 1rem;
-    opacity: 0;
-    transition: opacity .5s ease-in-out;
-    overflow-x: hidden;
-}
-
-.notification-message{
-    display: block;
-    text-align: center;
-    padding: 2rem;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: var(--background-color);
-}
-
-.show{
-    opacity: 1;
-}
-
 /* Header */
 
 .logo {

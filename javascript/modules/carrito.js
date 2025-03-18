@@ -14,7 +14,6 @@ export function carrito() {
     let totalPrecio = document.querySelector('#total');
     let totalBolivares = document.querySelector('#total-bs');
     const horarioContainer = document.querySelector('.container-horario');
-    const notificationContainer = document.querySelector('.notification-container');
 
     /**
      * 2. EVENTOS
