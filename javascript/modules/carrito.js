@@ -14,6 +14,7 @@ export function carrito() {
     let totalPrecio = document.querySelector('#total');
     let totalBolivares = document.querySelector('#total-bs');
     const horarioContainer = document.querySelector('.container-horario');
+    const notificationContainer = document.querySelector('.notification-container');
 
     /**
      * 2. EVENTOS
@@ -170,9 +171,17 @@ export function carrito() {
         if (productosCarrito.length > 0) {
             carBtn.style.color = greenColor;
             carBtn.classList.add('fa-shake');
+            
+            setInterval(() => {
+                notificationContainer.classList.add('show');
+                setTimeout(() => {
+                    notificationContainer.classList.remove('show');
+                }, 3000);
+            }, 180000);
         } else {
             carBtn.style.color = '';
             carBtn.classList.remove('fa-shake');
+            notificationContainer.classList.remove('show');
         }
     }
 
