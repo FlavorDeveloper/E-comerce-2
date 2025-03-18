@@ -14,6 +14,8 @@ export function carrito() {
     let totalPrecio = document.querySelector('#total');
     let totalBolivares = document.querySelector('#total-bs');
     const horarioContainer = document.querySelector('.container-horario');
+    const notificacion = document.querySelector('.notificacion-container');
+    let notificacionMostrada = false;
 
     /**
      * 2. EVENTOS
@@ -62,6 +64,7 @@ export function carrito() {
         productosCarrito = [];
         actualizarCarrito();
         localStorage.clear();
+        notificacionMostrada = false;
     }
     
     function recuperarCarrito() {
@@ -104,6 +107,8 @@ export function carrito() {
         Bolivares();
         sincronizarStorage();
         actualizarColorYMovimiento();
+        mostrarNotificacion();
+        mostrarNotificacion = false;
     }
     
     function limpiarHtml() {
@@ -238,6 +243,19 @@ export function carrito() {
         } catch (error) {
             console.error('Error al obtener la tasa del dólar:', error);
             return null; // Devuelve null en caso de error
+        }
+    }
+
+    function mostrarNotificacion () {
+        if ((productosCarrito.length > 0 && !notificacionMostrada)){
+            notificacionMostrada = true;
+
+            setInterval(() => {
+                notificacion.classList.add('show');
+                setTimeout(() => {
+                    notificacion.classList.remove('show');
+                }, 3000);
+            }, 180000);
         }
     }
 }

@@ -675,6 +675,30 @@ i.fa-circle-xmark{
     padding: 4rem 0;
 }
 
+/* Notificacion */
+
+.notificacion-container{
+    width: max-content;
+    background-color: var(--background-red);
+    position: fixed;
+    top: 85%;
+    right: 0;
+    padding: 1rem 2rem;
+    border-radius: .5rem 0 0 .5rem;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+
+.notificacion-message{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--background-color);
+}
+
+.show{
+    opacity: 1;
+}
+
 /* Footer */
 
 footer{
@@ -725,8 +749,12 @@ footer{
 
 /* Notification */
 
-.notification-message{
-    padding: 1rem;
+.notificacion-container{
+    top: 89%;
+    padding: .5rem ;
+}
+
+.notificacion-message{
     font-size: 1.1rem;
 }
 
