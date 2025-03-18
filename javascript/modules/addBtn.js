@@ -25,7 +25,7 @@ export function addBtn () {
                 boton.style.color = ""; 
                 boton.textContent = textos;
                 padre.style.backgroundColor = '';
-            }, 2000);
+            }, 1000);
         });
     });
 };
