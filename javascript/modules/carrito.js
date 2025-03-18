@@ -142,8 +142,8 @@ export function carrito() {
         return total;
     }
 
-    function Bolivares() {
-        const tasaDolar = 64.25; // Puedes reemplazar esto por tu variable dinámica
+    async function Bolivares() {
+        const tasaDolar = await obtenerBCV(); 
         
         const bolivares = productosCarrito.reduce((acumulador, producto) => {
             const precioDolares = Number(producto.precio.replace('$', '').trim());
@@ -225,5 +225,19 @@ export function carrito() {
         // Paso 3: Codificar el mensaje final y abrir WhatsApp
         const finalMessageEncoded = encodeURIComponent(finalMessage);
         window.open(`https://wa.me/${numeroWhatsApp}?text=${finalMessageEncoded}`, "_blank");
+    }
+
+    async function obtenerBCV() {
+        const url = 'https://pydolarve.org/api/v1/dollar?page=bcv';
+    
+        try {
+            const respuesta = await fetch(url);
+            const resultado = await respuesta.json();
+            const precioDollar = resultado.monitors.usd.price;
+            return precioDollar;
+        } catch (error) {
+            console.error('Error al obtener la tasa del dólar:', error);
+            return null; // Devuelve null en caso de error
+        }
     }
 }
