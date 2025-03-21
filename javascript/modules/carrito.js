@@ -108,7 +108,7 @@ export function carrito() {
         sincronizarStorage();
         actualizarColorYMovimiento();
         mostrarNotificacion();
-        mostrarNotificacion = false;
+        notificacionMostrada = false;
     }
     
     function limpiarHtml() {
